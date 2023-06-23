@@ -21,8 +21,10 @@ def predict():
         return render_template('index.html',label='Will Purchase')
     if int(age)<=20:
         return render_template('index.html',label='Will not Purchase') '''
-    
-    return jsonify({'label': 'will not purchase'}) 
+    if int(age)>20:
+        return jsonify({'label': 'will purchase'})
+    if int(age)<=20:
+        return jsonify({'label': 'will not purchase'})
     #return 'Hi, my age is {} and my salary is {}'.format(age,salary)
     
 if __name__=='__main__':
